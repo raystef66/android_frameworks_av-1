@@ -18,4 +18,9 @@ cc_library {
     srcs: ["C2SoftXaacDec.cpp"],
 
     static_libs: ["libxaacdec"],
+
+    // Fails to compile when global ThinLTO is enabled for this library
+    lto: {
+        never: true,
+    },
 }
